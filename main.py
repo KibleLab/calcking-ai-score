@@ -31,5 +31,5 @@ def ocr_number(ocrDto: OcrDto):
 
     reader = easyocr.Reader(['ko', 'en'], gpu=True)
     img = cv2.imread(file)
-    text = reader.readtext(img, detail=0, allowlist="0123456789x")
+    text = reader.readtext(img, detail=0, allowlist="0123456789+-x")
     return {"result" : text}
